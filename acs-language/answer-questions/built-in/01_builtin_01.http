@@ -1,0 +1,35 @@
+########################################################
+#     REQUEST 1
+########################################################
+POST {{$processEnv LANGUAGE_ENDPOINT}}/language/:query-text?api-version=2021-10-01
+Content-Type: application/json
+Ocp-Apim-Subscription-Key: {{$processEnv LANGUAGE_API_KEY}}
+
+{
+    "records": [
+        {
+            "id": "id__0001",
+            "text": "Surface Laptop 4 is, first and foremost, optimized for Microsoft experiences. It retains the iconic design, details and materials that our customers love. With our signature 3:2 PixelSense touchscreen displays in 13.5” or 15” models, customers can choose from Alcantara or metal finishes in a variety of bold colors you can’t get anywhere else, including a new Ice Blue finish. Surface Laptop 4 offers a built-in HD front-facing camera with incredible low-light capability and a studio microphone array, ensuring you’ll come through loud and clear as you connect with loved ones or participate in a crucial virtual work meeting. With the 201 PPI, high-contrast touchscreen display, and Dolby® Atmos™ Omnisonic speakers, you’ll get a cinematic experience that immerses you in your favorite movies and shows from the comfort of anywhere. Whether through the vibrant touchscreen display, large trackpad with gesture support, or its industry-leading typing experience, Surface Laptop can adjust to your preferred workflow. Surface Laptop 4 offers a choice between either the 11th Gen Intel® Core™ processors, or AMD Ryzen™ Mobile Processors with Radeon™ Graphics Microsoft Surface® Edition (8 cores); in either case, you’ll find a smooth experience that powers modern, multitasking demands. Across both options, we’ve partnered to customize silicon in ways that boost performance while offering improved battery life. On the outside, you see style and sophistication. Effortlessly lift the screen, and this product will draw you into your flow. From the office, living room, coffee shop or classroom, nothing comes close to this product’s look and feel."
+        }
+    ],
+    "question": "How big is the touchscreen?",
+    "language": "en"
+}
+
+########################################################
+#     REQUEST 2
+########################################################
+POST {{$processEnv LANGUAGE_ENDPOINT}}/language/:query-text?api-version=2021-10-01
+Content-Type: application/json
+Ocp-Apim-Subscription-Key: {{$processEnv LANGUAGE_API_KEY}}
+
+{
+    "records": [
+        {
+            "id": "id__0001",
+            "text": "The Sustainable Development Goals (SDGs), also known as the Global Goals, were adopted by all United Nations Member States in 2015 as a universal call to action to end poverty, protect the planet and ensure that all people enjoy peace and prosperity by 2030. The 17 SDGs are integrated—that is, they recognize that action in one area will affect outcomes in others, and that development must balance social, economic and environmental sustainability.        Through the pledge to Leave No One Behind, countries have committed to fast-track progress for those furthest behind first. That is why the SDGs are designed to bring the world to several life-changing ‘zeros’, including zero poverty, hunger, AIDS and discrimination against women and girls. Everyone is needed to reach these ambitious targets. The creativity, knowhow, technology and financial resources from all of society is necessary to achieve the SDGs in every context."
+        }
+    ],
+    "question": "What are sustainable development goals?",
+    "language": "en"
+}

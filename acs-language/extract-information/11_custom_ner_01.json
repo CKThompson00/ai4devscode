@@ -1,0 +1,23 @@
+{
+    "tasks": {
+        "customEntityRecognitionTasks": [
+            {
+                "parameters": {
+                    "project-name": "LoanDocuments",
+                    "deployment-name": "prod",
+                    "stringIndexType": "TextElement_v8"
+                }
+            }
+        ]
+    },
+    "displayName": "CustomTextPortal_extraction",
+    "analysisInput": {
+        "documents": [
+            {
+                "id": "1",
+                "text": "YOUR_DOCUMENT_HERE",
+                "language": "en"
+            }
+        ]
+    }
+}

@@ -1,0 +1,18 @@
+########################################################
+#     REQUEST 1
+########################################################
+POST {{$processEnv LANGUAGE_ENDPOINT}}/language/:query-knowledgebases?projectName=SurfaceBook&api-version=2021-10-01&deploymentName=test
+Content-Type: application/json
+Ocp-Apim-Subscription-Key: {{$processEnv LANGUAGE_API_KEY}}
+
+{
+    "top": 3,
+    "question": "How do I fix a surface pen?",
+    "includeUnstructuredSources": true,
+    "confidenceScoreThreshold": "0",
+    "answerSpanRequest": {
+        "enable": true,
+        "topAnswersWithSpan": 1,
+        "confidenceScoreThreshold": "0"
+    }
+}

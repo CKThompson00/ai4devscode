@@ -1,0 +1,57 @@
+########################################################
+#     REQUEST 1
+########################################################
+# @name analyze1
+POST https://centralus.api.cognitive.microsoft.com/vision/v3.2/read/analyze
+Content-Type: application/json
+Ocp-Apim-Subscription-Key: {{$processEnv VISION_API_KEY}}
+
+{
+    "url": "https://cdn-images-1.medium.com/max/1600/1*U-R58ahr5dtAvtSLGK2wXg.png"
+}
+
+########################################################
+#     REQUEST 2  - Get Read Results -
+#                    per Operation-Location
+########################################################
+GET  {{analyze1.response.headers.Operation-Location}}
+Ocp-Apim-Subscription-Key: {{$processEnv VISION_API_KEY}}
+
+########################################################
+#     REQUEST 3 - Handwritten
+########################################################
+# @name analyze2
+POST https://centralus.api.cognitive.microsoft.com//vision/v3.2/read/analyze
+Content-Type: application/json
+Ocp-Apim-Subscription-Key: {{$processEnv VISION_API_KEY}}
+
+{
+    "url": "https://th.bing.com/th/id/R.6a4786e32f826407d0cc0999764133e7?rik=xnpR6i016EexPA&riu=http%3a%2f%2f4.bp.blogspot.com%2f-UayGuDNz2Fk%2fTwwJB0LA3qI%2fAAAAAAAAAKs%2f9mIy0bTS0TA%2fs1600%2fafter_2.JPG&ehk=8ETpunA%2fbzQIzL6ExLqfxYxXRogTBKhzIwsgtyjQ%2fms%3d&risl=&pid=ImgRaw&r=0"
+}
+
+########################################################
+#     REQUEST 4  - Get Read Results
+#                    per Operation-Location
+########################################################
+GET  {{analyze2.response.headers.Operation-Location}}
+Ocp-Apim-Subscription-Key: {{$processEnv VISION_API_KEY}}
+
+
+########################################################
+#     REQUEST 5
+########################################################
+# @name analyze3
+POST https://centralus.api.cognitive.microsoft.com//vision/v3.2/read/analyze?pages=1-2
+Content-Type: application/json
+Ocp-Apim-Subscription-Key: {{$processEnv VISION_API_KEY}}
+
+{
+    "url": "https://azure.microsoft.com/mediahandler/files/resourcefiles/azure-ai-learning-journey/Azure%20AI%20Developer%20Learning%20Journey%20final%20update%201.28.21%20-%20Updated.pdf",
+}
+
+########################################################
+#     REQUEST 6  - Get Read Results
+#                    per Operation-Location
+########################################################
+GET  {{analyze3.response.headers.Operation-Location}}
+Ocp-Apim-Subscription-Key: {{$processEnv VISION_API_KEY}}

@@ -1,0 +1,23 @@
+########################################################
+#     REQUEST 1
+#     Landmarks - https://docs.microsoft.com/en-us/azure/cognitive-services/face/concepts/face-detection#face-landmarks
+########################################################
+POST https://centralus.api.cognitive.microsoft.com//face/v1.0/detect?returnFaceId=false&returnFaceLandmarks=true&recognitionModel=recognition_04&returnRecognitionModel=false&detectionModel=detection_03&faceIdTimeToLive=86400
+Content-Type: application/json
+Ocp-Apim-Subscription-Key: {{$processEnv VISION_API_KEY}}
+
+{
+    "url": "https://upload.wikimedia.org/wikipedia/commons/c/c3/RH_Louise_Lillian_Gish.jpg"
+}
+
+########################################################
+#     REQUEST 2
+#         Attributes - https://docs.microsoft.com/en-us/azure/cognitive-services/face/concepts/face-detection#attributes
+########################################################
+POST https://centralus.api.cognitive.microsoft.com//face/v1.0/detect?returnFaceId=false&returnFaceLandmarks=false&recognitionModel=recognition_04&detectionModel=detection_01&faceIdTimeToLive=86400&returnFaceAttributes=age,gender,headPose,smile,facialHair,glasses,emotion,hair,makeup,occlusion,accessories,blur,exposure,noise,qualityForRecognition
+Content-Type: application/json
+Ocp-Apim-Subscription-Key: {{$processEnv VISION_API_KEY}}
+
+{
+    "url": "https://upload.wikimedia.org/wikipedia/commons/c/c3/RH_Louise_Lillian_Gish.jpg"
+}

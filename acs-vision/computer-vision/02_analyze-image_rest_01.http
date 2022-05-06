@@ -1,0 +1,67 @@
+########################################################
+#     REQUEST 1 - Analyze Image
+########################################################
+POST https://centralus.api.cognitive.microsoft.com/vision/v3.2/analyze?visualFeatures=Categories,Description&details=Landmarks
+Content-Type: application/json
+Ocp-Apim-Subscription-Key: {{$processEnv VISION_API_KEY}}
+
+{
+    "url": "https://media-cdn.tripadvisor.com/media/photo-s/17/18/eb/45/caption.jpg"
+}
+
+########################################################
+#     REQUEST 2 - Area Of Interest
+########################################################
+POST https://centralus.api.cognitive.microsoft.com/vision/v3.2/areaOfInterest?model-version=latest
+Content-Type: application/json
+Ocp-Apim-Subscription-Key: {{$processEnv VISION_API_KEY}}
+
+{
+    "url": "https://media-cdn.tripadvisor.com/media/photo-s/17/18/eb/45/caption.jpg"
+}
+
+########################################################
+#     REQUEST 3 - Describe Image
+########################################################
+POST https://centralus.api.cognitive.microsoft.com/vision/v3.2/tag?language=en&model-version=latest
+Content-Type: application/json
+Ocp-Apim-Subscription-Key: {{$processEnv VISION_API_KEY}}
+
+{
+    "url": "https://media-cdn.tripadvisor.com/media/photo-s/17/18/eb/45/caption.jpg"
+}
+
+########################################################
+#     REQUEST 4 - Thumbnail
+########################################################
+POST https://centralus.api.cognitive.microsoft.com/vision/v3.2/generateThumbnail?width=190&height=256&smartCropping=true&model-version=latest
+Content-Type: application/json
+Ocp-Apim-Subscription-Key: {{$processEnv VISION_API_KEY}}
+
+{
+    "url": "https://media-cdn.tripadvisor.com/media/photo-s/17/18/eb/45/caption.jpg"
+}
+
+########################################################
+#     REQUEST 5 - Tag
+########################################################
+POST https://centralus.api.cognitive.microsoft.com/vision/v3.2/tag?language=en&model-version=latest
+Content-Type: application/json
+Ocp-Apim-Subscription-Key: {{$processEnv VISION_API_KEY}}
+
+{
+    "url": "https://media-cdn.tripadvisor.com/media/photo-s/17/18/eb/45/caption.jpg"
+}
+
+
+########################################################
+#     REQUEST 6 - Detect Object
+########################################################
+POST https://centralus.api.cognitive.microsoft.com/vision/v3.2/detect?model-version=latest
+Content-Type: application/json
+Ocp-Apim-Subscription-Key: {{$processEnv VISION_API_KEY}}
+
+{
+    "url": "https://media-cdn.tripadvisor.com/media/photo-s/17/18/eb/45/caption.jpg"
+}
+

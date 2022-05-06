@@ -1,0 +1,5 @@
+POST https://eastus2.api.cognitive.microsoft.com/customvision/v3.0/Prediction/a50dd42f-5d7f-4824-b5ad-b86c079bd0e2/classify/iterations/Iteration1/image
+Prediction-Key: {{ $processEnv CUSTOM_VISION_KEY}}
+Content-Type: application/octet-stream
+
+< ./total.jpg

@@ -1,0 +1,10 @@
+########################################################
+#     REQUEST 1
+########################################################
+POST {{$processEnv COGSVC_ENDPOINT_CM}}/contentmoderator/moderate/v1.0/ProcessImage/Evaluate?CacheImage=false
+Content-Type: application/json
+Ocp-Apim-Subscription-Key: {{$processEnv COGSVC_API_KEY_CM}}
+
+{
+    "DataRepresentation": "URL", "Value":"https://moderatorsampleimages.blob.core.windows.net/samples/sample.jpg"
+}

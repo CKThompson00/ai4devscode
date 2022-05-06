@@ -1,0 +1,22 @@
+{
+    "tasks": {
+        "customMultiClassificationTasks": [
+            {
+                "parameters": {
+                    "project-name": "MovieGenres",
+                    "deployment-name": "prod"
+                }
+            }
+        ]
+    },
+    "displayName": "CustomTextPortal_multiClassification",
+    "analysisInput": {
+        "documents": [
+            {
+                "id": "1",
+                "text": "YOUR_DOCUMENT_HERE",
+                "language": "en"
+            }
+        ]
+    }
+}

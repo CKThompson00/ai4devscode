@@ -1,0 +1,32 @@
+POST {{$processEnv COGSVCS_ENDPOINT_S1}}/indexes/hotels-sample-index/docs/search?api-version=2021-04-30-Preview
+Content-Type: application/json
+Api-Key: {{$processEnv COGSVCS_API_KEY_S1}}
+
+{
+    "search": "newer hotel near the water with a great restaurant",
+    "queryType": "simple",
+    "queryLanguage": "en-us",
+    "select": "HotelId,HotelName,Description,Category",
+    "featuresMode": "enabled",
+    "count": true
+}
+
+#############
+POST {{$processEnv COGSVCS_ENDPOINT_S1}}/indexes/hotels-sample-index/docs/search?api-version=2021-04-30-Preview
+Content-Type: application/json
+Api-Key: {{$processEnv COGSVCS_API_KEY_S1}}
+
+{
+    "search": "newer hotel near the water with a great restaurant",
+    "queryType": "semantic",
+    "queryLanguage": "en-us",
+    "semanticConfiguration": "semantic-config",
+    "speller": "lexicon",
+    "answers": "extractive|count-3",
+    "captions": "extractive|highlight-true",
+    "highlightPreTag": "<strong>",
+    "highlightPostTag": "</strong>",
+    "select": "HotelId,HotelName,Description,Category",
+    "featuresMode": "enabled",
+    "count": true
+}
